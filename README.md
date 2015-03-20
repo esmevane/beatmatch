@@ -8,14 +8,24 @@ A user has two signals:
   1. Collections
   2. Wantlists
 
-To find out how similar a user is to another user, we use this formula:
+What we want to do is find the relationship between two users given these two factors.  The first is what they *have*, which is the stronger signal.  The next is what they want, which is a milder signal.
 
-1. Get a user's collection and wishlist
-2. Get another user's collection and wishlist
-3. Count similarities between U1C and U2C
-4. Count differences between U1C and U2C
-5. Divide similarities by differences
-6. Repeat for wants
+Discogs doesn't provide negative signaling.  So we're going to ignore that completely.
+
+On a first blush, we won't be able to do advanced aggregation.  The reason is pretty simple: We only have access to Discog information by way of their public API.  Latency on these requests is a little prohibitive.
+
+Instead, what we'll do is bottleneck our throughput deliberately.
+
+1. First we get a single requested user.  Right now there is no master list of users available externally, so this user will be input.
+2. The top 5 collections and wantlist items will be displayed as featured items.
+3. A comparison view will be put in place which will allow the input of another user's name.
+  - If the user exists, we create a comparison view.
+  - If the user doesn't exist, the comparison view is empty.
+
+First blush layout:
+
+![First blush layout](/doc/images/beatmatch-concept.png)
+
 
 ## Installation
 
