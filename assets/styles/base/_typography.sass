@@ -1,0 +1,82 @@
+body
+  +font-feature-settings("kern", "liga", "pnum")
+  -webkit-font-smoothing: antialiased
+
+  background: $base-background-color
+  color: $base-font-color
+  font:
+    family: $base-font-family
+    size:   $base-font-size
+  line-height: $base-line-height
+
+h1
+  color: transparentize($headline-color, 0.3)
+  font-size: $base-font-size * 2
+  line-height: $heading-line-height * 2
+  margin: $base-font-size * 0.5 0
+
+h2
+  color: transparentize($byline-color, 0.6)
+  font-size: $base-font-size * 1.75
+  line-height: $heading-line-height * 1.75
+  margin: $base-font-size * 0.45 0
+
+h3
+  color: $accent-color
+  font-size: $base-font-size * 1.5
+  line-height: $heading-line-height * 1.5
+  margin: $base-font-size * 0.4 0
+
+h4
+  font-size: $base-font-size * 1.25
+  line-height: $heading-line-height * 1.25
+  margin: $base-font-size * 0.35 0
+
+h5
+  font-size: $base-font-size
+  line-height: $heading-line-height
+  margin: $base-font-size * 0.3 0
+
+h6
+  color: $action-color
+  font:
+    weight: bolder
+    size:   $base-font-size
+  line-height: $heading-line-height
+  margin: 0 0 $small-spacing
+  text-transform: uppercase
+
+p
+  margin: 0 0 $small-spacing
+
+a
+  color: $accent-color
+  text-decoration: none
+  transition: color 0.1s linear
+
+  &:active,
+  &:focus,
+  &:hover
+    color: darken($accent-color, 15%)
+
+  &:active,
+  &:focus
+    outline: none
+
+  &:visited
+    color: darken($accent-color, 20%)
+
+hr
+  border-bottom: $base-border
+  border-left: none
+  border-right: none
+  border-top: none
+  margin: $base-spacing 0
+
+img,
+picture
+  margin: 0
+  max-width: 100%
+
+.code
+  font-family: monospace

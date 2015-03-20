@@ -1,0 +1,51 @@
+// Typography
+$base-font-family: 'Open Sans', sans-serif
+$heading-font-family: $base-font-family
+
+// Font Sizes
+$base-font-size: 1em
+
+// Line height
+$base-line-height: 1.5
+$heading-line-height: 1.2
+
+// Other Sizes
+$base-border-radius: 3px
+$base-spacing: $base-line-height * 1em
+$small-spacing: $base-spacing / 2
+$base-z-index: 0
+
+// Colors
+$blue: #477dca
+$dark-gray: #333333
+$medium-gray: #999999
+$light-gray: #dddddd
+
+$plum: #363142
+$eggplant: #553D51
+$pomegranate: #78475A
+$rose: #99535D
+$ruby-pulp: #B5635A
+$beige: #fbf3e2
+
+// Animations
+$base-transition: all 0.3s ease
+
+// Font Colors
+$base-background-color: $beige
+$base-font-color: $dark-gray
+$accent-color: $pomegranate
+$headline-color: $eggplant
+$byline-color: $plum
+$action-color: $ruby-pulp
+
+// Border
+$base-border-color: transparentize($accent-color, 0.4)
+$base-border: 1px dotted $base-border-color
+$heavy-border: 3px dotted $base-border-color
+
+// Forms
+$base-form-background: transparentize(lighten($base-background-color, 10%), 0.3)
+$form-focus-color: adjust-color($action-color, $lightness: -5%, $alpha: -0.3)
+$form-box-shadow: inset 0 1px 3px rgba(black, 0.06)
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px $form-focus-color
