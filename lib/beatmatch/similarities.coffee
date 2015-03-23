@@ -1,20 +1,15 @@
 _ = require 'underscore'
 
-class Commonalities
+class Similarities
   constructor: ({ @base, @other }) ->
 
   set: ->
     set = []
-    for key in @_keys()
-      set = set.concat _.intersection @base[key], (@other[key] or [])
+    for key in @base.members()
+      subjects = [ @base.fetch(key), @other.fetch(key) ]
+      set      = set.concat _.intersection subjects...
     set
 
   total: -> @set().length
 
-  _keys: ->
-    keys = []
-    for key, value of @base
-      keys.push(key) if _.isArray(value)
-    keys
-
-module?.exports = Commonalities
+module?.exports = Similarities

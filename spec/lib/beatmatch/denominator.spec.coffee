@@ -1,12 +1,13 @@
+Signals     = lib 'beatmatch/signals'
 Denominator = lib 'beatmatch/denominator'
 
 describe "Denominator", ->
-  base =
+  base = Signals.create
     likes: [1..3]
     dislikes: [4..6]
     wants: [7..9]
 
-  other =
+  other = Signals.create
     likes: [4..6]
     dislikes: [7..9]
     wants: [1..3]

@@ -5,8 +5,9 @@ class Signal
     @_key   = _.first Object.keys(attributes)
     @_value = attributes[@_key]
 
-  key:     -> @_key
-  valueOf: -> @_value
+  key:             -> @_key
+  sameKey: (other) -> @key() is other.key()
+  valueOf:         -> @_value
 
 Signal.create = (key, value) ->
   object      = {}
