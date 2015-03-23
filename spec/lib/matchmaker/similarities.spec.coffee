@@ -1,7 +1,7 @@
-Signals      = lib 'beatmatch/signals'
-Distinctions = lib 'beatmatch/distinctions'
+Signals      = lib 'matchmaker/signals'
+Similarities = lib 'matchmaker/similarities'
 
-describe "Distinctions", ->
+describe "Similarities", ->
   base = Signals.create
     likes: [1..3]
     dislikes: [4..6]
@@ -12,12 +12,12 @@ describe "Distinctions", ->
     dislikes: [7..9]
     wants: [1..3]
 
-  comparison = new Distinctions({ base, other })
+  comparison = new Similarities({ base, other })
 
   describe '#set', ->
     it "contains the product of compared sets", ->
-      expect(comparison.set()).to.eql [1..9]
+      expect(comparison.set()).to.eql []
 
   describe '#total', ->
     it "is the total number of set members", ->
-      expect(comparison.total()).to.eql 9
+      expect(comparison.total()).to.eql 0

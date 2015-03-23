@@ -8,6 +8,17 @@ class SimilarityIndex
     @distinctions = new Distinctions({ @base, @other })
     @denominator  = new Denominator({ @base, @other })
 
+  stats: ->
+    similarities:
+      set:   @similarities.set()
+      total: @similarities.total()
+    distinctions:
+      set:   @distinctions.set()
+      total: @distinctions.total()
+    subjects:
+      set:   @denominator.set()
+      total: @denominator.total()
+
   compare: ->
     similar  = parseFloat(@similarities.total())
     distinct = parseFloat(@distinctions.total())

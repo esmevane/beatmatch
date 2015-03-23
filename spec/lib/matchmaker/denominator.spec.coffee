@@ -1,5 +1,5 @@
-Signals     = lib 'beatmatch/signals'
-Denominator = lib 'beatmatch/denominator'
+Signals     = lib 'matchmaker/signals'
+Denominator = lib 'matchmaker/denominator'
 
 describe "Denominator", ->
   base = Signals.create

@@ -1,6 +1,6 @@
 _       = require 'underscore'
-Signal  = lib 'beatmatch/signal'
-Signals = lib 'beatmatch/signals'
+Signal  = lib 'matchmaker/signal'
+Signals = lib 'matchmaker/signals'
 
 describe "Signals", ->
   attributes =
