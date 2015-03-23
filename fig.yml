@@ -1,0 +1,7 @@
+web:
+  build: .
+  command: grunt serve
+  ports:
+    - "9001:9001"
+  environment:
+    NODE_ENV: development

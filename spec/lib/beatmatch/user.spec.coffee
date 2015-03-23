@@ -1,4 +1,4 @@
-User = require '../../../lib/beatmatch/user'
+User = lib 'beatmatch/user'
 
 describe 'User', ->
   it "exists", ->

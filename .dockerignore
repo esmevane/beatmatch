@@ -1,0 +1,7 @@
+.gem
+.DS_Store
+.sass-cache/
+config/credentials.coffee
+notes/
+node_modules/
+tmp/

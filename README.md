@@ -26,6 +26,11 @@ First blush layout:
 
 ![First blush layout](/doc/images/beatmatch-concept.png)
 
+## Some brain kindling
+
+* `PositiveSignal`, `NegativeSignal`, two classes which are composed by `SimilarityIndex`
+* A `Signal` object has a weight as well as an additive or subtractive property
+* `Signal` objects expose calculable traits about themselves, like `#total`, `#calculated`.  Positives provide additive functionality, Negatives provide subtractive functionality.
 
 ## Installation
 
