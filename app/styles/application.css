@@ -252,6 +252,12 @@ picture {
   background-color: #EEEEEE;
   text-align: center;
   padding: 1em; }
+  #headline .logo {
+    background: url(/images/discogs-logo.png) no-repeat center;
+    background-size: cover;
+    height: 237px;
+    margin: 0 auto;
+    width: 237px; }
 
 .user-panel {
   -webkit-box-flex: 1;
