@@ -15,12 +15,29 @@ module.exports = (grunt) ->
         src: ['**/*.coffee']
         dest: 'tmp/src/scripts'
         ext: '.js'
+      config:
+        expand: true
+        cwd: 'config'
+        src: ['**/*.coffee']
+        dest: 'tmp/src/config'
+        ext: '.js'
+      lib:
+        expand: true
+        cwd: 'lib'
+        src: ['**/*.coffee']
+        dest: 'tmp/src/lib'
+        ext: '.js'
     copy:
       sources:
         expand: true
         cwd: 'assets/scripts'
         src: ['**/*.js']
         dest: 'tmp/src/scripts'
+      lib:
+        expand: true
+        cwd: 'lib'
+        src: ['**/*.js']
+        dest: 'tmp/src/lib'
     express:
       server:
         options:
@@ -47,7 +64,7 @@ module.exports = (grunt) ->
           'app/scripts/application.min.js': ['app/scripts/application.js']
     watch:
       express:
-        files: ['assets/**/*.coffee', 'assets/**/*.sass']
+        files: ['assets/**/*.coffee', 'assets/**/*.sass', 'lib/**/*.coffee']
         tasks: ['build']
 
   grunt.registerTask 'serve', ['express', 'watch']

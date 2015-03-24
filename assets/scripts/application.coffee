@@ -5,22 +5,18 @@
 # $        = require 'jquery'
 # _        = require 'underscore'
 # Backbone = require 'backbone'
-#
-# React   = require 'react'
-# element = document.getElementById('react-load-state')
-# content = <p>React: Loaded</p>
-#
-# React.render content, element
 
-{ Client } = require('disconnect')
+React      = require 'react'
+UserPanel  = require '../lib/beatmatch/components/user_panel'
+Comparison = require '../lib/beatmatch/components/comparison'
+element    = document.getElementById('beatmatch-panel')
 
-global?.Client = Client
-global?.keys =
-  consumerKey:    'MPvSNAklPohpKoQYuBON'
-  consumerSecret: 'RUeNODuosJyGgWrOeEbhNTNntazFiClm'
+class App extends React.Component
+  render: ->
+    <section className='app-container'>
+      <Comparison />
+      <UserPanel candidate='base' />
+      <UserPanel candidate='other' />
+    </section>
 
-
-global?.discogClient = new Client(keys)
-
-global?.users = discogClient.user()
-global?.list = discogClient.user().wantlist()
+React.render <App />, element

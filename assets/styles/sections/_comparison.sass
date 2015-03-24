@@ -1,0 +1,38 @@
+.comparison
+  border-radius: $base-font-size * 8
+  box-shadow: 0 1px 5px transparentize($overlay-color, 0.1)
+  margin: 0 auto
+  max-width: $base-font-size * 8
+  max-height: $base-font-size * 8
+  padding: $base-font-size * 2
+  position: absolute
+  text-align: center
+  z-index: 1
+
+  top: $base-font-size * 6
+  bottom: 0
+  left: 0
+  right: 0
+
+  &.no-match
+    background: darken($accent-color, 10%)
+
+  &.good-match
+    background: $byline-color
+
+  &.bad-match
+    background: $action-color
+
+  figcaption
+    position: absolute
+    color: $accent-color
+    font-size: $base-font-size * 3
+    line-height: $base-font-size * 2.5
+    font-weight: bolder
+    text-shadow: 1px 1px 2px $overlay-color
+    margin: auto
+
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0

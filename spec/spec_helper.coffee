@@ -1,10 +1,5 @@
-global?.chai  = require('chai')
-global?.spies = require('chai-spies')
-
-chai.use(spies)
-
+global?.chai   = require('chai')
 global?.expect = chai.expect
-global?.async  = require('async')
 
 global?.lib = (filename) ->
   path = require('path')

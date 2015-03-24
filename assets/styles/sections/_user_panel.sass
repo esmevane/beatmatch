@@ -1,0 +1,54 @@
+$overlay-color: transparentize($base-background-color, 0.5)
+$overlay: linear-gradient($overlay-color 0, $overlay-color 100%)
+
+.user-panel
+  +flex(1 0 30%)
+
+  background-color: $headline-color
+  margin: $base-font-size
+  position: relative
+  min-height: $base-font-size * 20
+
+  header
+    background-color: $base-background-color
+    min-height: $base-font-size * 10
+    padding: $base-font-size
+
+    &.base
+      background: $overlay, url(/images/base.jpg) no-repeat 50% 50%
+      background-size: cover
+
+    &.other
+      background: $overlay, url(/images/other.jpg) no-repeat 50% 50%
+      background-size: cover
+
+  .titles
+    +full-flex
+    text-align: center
+
+    li
+      +flex(1 0 20%)
+
+      background: $accent-color
+      box-shadow: 0 1px 2px transparentize($overlay-color, 0.3)
+      color: $overlay-color
+      display: inline-block
+      font-size: $base-font-size * 1.25
+      line-height: $base-font-size * 3 * 1.5
+      margin: $base-font-size * 0.75
+      padding: $base-font-size * 0.75
+      text-align: center
+
+  input
+    border: none
+    background: none
+    color: transparentize($headline-color, 0.3)
+    cursor: pointer
+    font-size: $base-font-size * 2
+    line-height: $heading-line-height * 2
+    text-align: right
+    text-shadow: 1px 1px 2px $overlay-color
+    margin: 0 0 auto auto
+
+    &:focus
+      outline: 0px solid transparent

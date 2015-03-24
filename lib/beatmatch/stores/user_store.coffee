@@ -5,16 +5,17 @@ Repo             = require('../repos/user_repo')
 { EventEmitter } = require('events')
 
 class UserStore extends EventEmitter
-  hasChanged:           => @emit Constants.UsersChange
+  hasChanged: (payload) => @emit Constants.UsersChange, payload
   onChange:  (callback) -> @on Constants.UsersChange, callback
   offChange: (callback) -> @removeListener Constants.UsersChange, callback
 
-  showUser: (name) -> Repo.show(name)
+  showUser: ({ name, candidate }) -> Repo.show(name)
 
   registry: ({ action }) =>
-    { name } = action
+    { type, payload: { name, candidate } } = action
     switch action.type
-      when Constants.GetUser then Repo.get(name, @hasChanged)
+      when Constants.GetUser
+        Repo.get name, (user) => @hasChanged({ user, candidate })
 
 userStore = new UserStore
 userStore.dispatcherIndex = Dispatcher.register(userStore.registry)

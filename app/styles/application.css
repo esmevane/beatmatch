@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  transition: 0.3s ease; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"],
 button {
@@ -11,10 +12,10 @@ button {
   -o-appearance: none;
   appearance: none;
   -webkit-font-smoothing: antialiased;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(90, 85, 85, 0.7);
   border-radius: 3px;
-  border: 1px solid rgba(181, 99, 90, 0.4);
-  color: rgba(181, 99, 90, 0.7);
+  border: 1px solid rgba(207, 63, 63, 0.4);
+  color: rgba(207, 63, 63, 0.7);
   cursor: pointer;
   display: inline-block;
   font-family: "Open Sans", sans-serif;
@@ -30,7 +31,7 @@ button {
   button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus,
   button:hover,
   button:focus {
-    background-color: rgba(255, 255, 255, 0.7); }
+    background-color: rgba(155, 148, 148, 0.7); }
   button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
   button:disabled {
     cursor: not-allowed;
@@ -39,8 +40,8 @@ button {
 a.action {
   -webkit-font-smoothing: antialiased;
   border-radius: 3px;
-  border: 1px solid rgba(181, 99, 90, 0.4);
-  color: rgba(181, 99, 90, 0.7);
+  border: 1px solid rgba(207, 63, 63, 0.4);
+  color: rgba(207, 63, 63, 0.7);
   display: inline-block;
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
@@ -54,15 +55,15 @@ a.action {
   vertical-align: middle;
   white-space: nowrap; }
   a.action:hover, a.action:focus {
-    background-color: rgba(255, 255, 255, 0.7); }
+    background-color: rgba(155, 148, 148, 0.7); }
   a.action.call-to-action {
-    background-color: #90688a;
+    background-color: white;
     border: none;
-    color: rgba(251, 243, 226, 0.9); }
+    color: rgba(64, 60, 60, 0.9); }
 
 fieldset {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px dotted rgba(120, 71, 90, 0.6);
+  background-color: rgba(90, 85, 85, 0.7);
+  border: 1px dotted rgba(251, 251, 251, 0.6);
   margin: 0 0 0.75em;
   padding: 1.5em; }
 
@@ -84,8 +85,8 @@ label {
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
 select[multiple=multiple],
 textarea {
-  background-color: #fefcf8;
-  border: 1px dotted rgba(120, 71, 90, 0.6);
+  background-color: #4d4848;
+  border: 1px dotted rgba(251, 251, 251, 0.6);
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
@@ -98,13 +99,13 @@ textarea {
   input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
   select[multiple=multiple]:hover,
   textarea:hover {
-    border-color: rgba(88, 52, 66, 0.6); }
+    border-color: rgba(226, 226, 226, 0.6); }
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
   select[multiple=multiple]:focus,
   textarea:focus {
-    background-color: white;
-    border-color: #B5635A;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(169, 85, 76, 0.7);
+    background-color: #5a5555;
+    border-color: #CF3F3F;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(196, 49, 49, 0.7);
     outline: none; }
 
 textarea {
@@ -161,7 +162,7 @@ th {
   text-align: left; }
 
 td {
-  border-top: 1px solid rgba(120, 71, 90, 0.3);
+  border-top: 1px solid rgba(251, 251, 251, 0.3);
   padding: 0.75em 0; }
 
 tr,
@@ -175,26 +176,26 @@ body {
   -ms-font-feature-settings: "kern", "liga", "pnum";
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
-  background: #fbf3e2;
-  color: #333333;
+  background: #403C3C;
+  color: #403C3C;
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
   line-height: 1.5; }
 
 h1 {
-  color: rgba(85, 61, 81, 0.7);
+  color: rgba(238, 238, 238, 0.7);
   font-size: 2em;
   line-height: 2.4;
   margin: 0.5em 0; }
 
 h2 {
-  color: rgba(54, 49, 66, 0.4);
+  color: rgba(38, 162, 125, 0.4);
   font-size: 1.75em;
   line-height: 2.1;
   margin: 0.45em 0; }
 
 h3 {
-  color: #78475A;
+  color: #FBFBFB;
   font-size: 1.5em;
   line-height: 1.8;
   margin: 0.4em 0; }
@@ -210,7 +211,7 @@ h5 {
   margin: 0.3em 0; }
 
 h6 {
-  color: #B5635A;
+  color: #CF3F3F;
   font-weight: bolder;
   font-size: 1em;
   line-height: 1.2;
@@ -221,18 +222,18 @@ p {
   margin: 0 0 0.75em; }
 
 a {
-  color: #78475A;
+  color: #FBFBFB;
   text-decoration: none;
   transition: color 0.1s linear; }
   a:active, a:focus, a:hover {
-    color: #482b36; }
+    color: #d5d5d5; }
   a:active, a:focus {
     outline: none; }
   a:visited {
-    color: #38212a; }
+    color: #c8c8c8; }
 
 hr {
-  border-bottom: 1px dotted rgba(120, 71, 90, 0.6);
+  border-bottom: 1px dotted rgba(251, 251, 251, 0.6);
   border-left: none;
   border-right: none;
   border-top: none;
@@ -245,5 +246,188 @@ picture {
 
 .code {
   font-family: monospace; }
+
+#headline {
+  width: 100%;
+  background-color: #EEEEEE;
+  text-align: center;
+  padding: 1em; }
+
+.user-panel {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 0 30%;
+  -moz-flex: 1 0 30%;
+  -ms-flex: 1 0 30%;
+  flex: 1 0 30%;
+  background-color: #EEEEEE;
+  margin: 1em;
+  position: relative;
+  min-height: 20em; }
+  .user-panel header {
+    background-color: #403C3C;
+    min-height: 10em;
+    padding: 1em; }
+    .user-panel header.base {
+      background: linear-gradient(rgba(64, 60, 60, 0.5) 0, rgba(64, 60, 60, 0.5) 100%), url(/images/base.jpg) no-repeat 50% 50%;
+      background-size: cover; }
+    .user-panel header.other {
+      background: linear-gradient(rgba(64, 60, 60, 0.5) 0, rgba(64, 60, 60, 0.5) 100%), url(/images/other.jpg) no-repeat 50% 50%;
+      background-size: cover; }
+  .user-panel .titles {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-align-content: stretch;
+    -moz-align-content: stretch;
+    align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    box-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    -ms-align-items: stretch;
+    -o-align-items: stretch;
+    align-items: stretch;
+    -ms-flex-align: stretch;
+    text-align: center; }
+    .user-panel .titles li {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1 0 20%;
+      -moz-flex: 1 0 20%;
+      -ms-flex: 1 0 20%;
+      flex: 1 0 20%;
+      background: #FBFBFB;
+      box-shadow: 0 1px 2px rgba(64, 60, 60, 0.2);
+      color: rgba(64, 60, 60, 0.5);
+      display: inline-block;
+      font-size: 1.25em;
+      line-height: 4.5em;
+      margin: 0.75em;
+      padding: 0.75em;
+      text-align: center; }
+  .user-panel input {
+    border: none;
+    background: none;
+    color: rgba(238, 238, 238, 0.7);
+    cursor: pointer;
+    font-size: 2em;
+    line-height: 2.4;
+    text-align: right;
+    text-shadow: 1px 1px 2px rgba(64, 60, 60, 0.5);
+    margin: 0 0 auto auto; }
+    .user-panel input:focus {
+      outline: 0px solid transparent; }
+
+.app-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-align-content: stretch;
+  -moz-align-content: stretch;
+  align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  box-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
+  -ms-flex-align: stretch;
+  margin: 1em;
+  position: relative; }
+
+.comparison {
+  border-radius: 8em;
+  box-shadow: 0 1px 5px rgba(64, 60, 60, 0.4);
+  margin: 0 auto;
+  max-width: 8em;
+  max-height: 8em;
+  padding: 2em;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  top: 6em;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .comparison.no-match {
+    background: #e2e2e2; }
+  .comparison.good-match {
+    background: #26A27D; }
+  .comparison.bad-match {
+    background: #CF3F3F; }
+  .comparison figcaption {
+    position: absolute;
+    color: #FBFBFB;
+    font-size: 3em;
+    line-height: 2.5em;
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px rgba(64, 60, 60, 0.5);
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
 
 /*# sourceMappingURL=application.css.map */

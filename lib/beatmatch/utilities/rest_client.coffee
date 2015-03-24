@@ -3,14 +3,16 @@ mime            = require('rest/interceptor/mime')
 queryString     = require('querystring')
 { Credentials } = require('../../../config/credentials')
 
-_credentials =
+_beatmatchCredentials =
   key:    Credentials.consumerKey
   secret: Credentials.consumerSecret
+
+_credentialString = -> queryString.stringify(_beatmatchCredentials)
 
 class RestClient
   constructor: ({ @url, @resource }) ->
     @rest = rest.wrap(mime)
-    @path = "#{@url}/#{@resource}?#{queryString.stringify(_credentials)}"
+    @path = "#{@url}/#{@resource}?#{_credentialString()}"
 
     @headers =
       'Content-Type': 'application/json',
