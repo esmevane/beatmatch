@@ -2,21 +2,26 @@
 # these lines to use in a bootstrap method, or, if you require them in other
 # components, add the requirements there.
 #
-# $        = require 'jquery'
-# _        = require 'underscore'
-# Backbone = require 'backbone'
 
 React      = require 'react'
 UserPanel  = require '../lib/beatmatch/components/user_panel'
 Comparison = require '../lib/beatmatch/components/comparison'
-element    = document.getElementById('beatmatch-panel')
+Scatter    = require './components/scatter'
 
 class App extends React.Component
   render: ->
-    <section className='app-container'>
-      <Comparison />
-      <UserPanel candidate='base' />
-      <UserPanel candidate='other' />
-    </section>
+    <main>
+      <section id='headline'>
+        <Scatter />
+        <div className='logo' />
+      </section>
+      <section id='beatmatch-panel'>
+        <section className='app-container'>
+          <Comparison />
+          <UserPanel candidate='base' />
+          <UserPanel candidate='other' />
+        </section>
+      </section>
+    </main>
 
-React.render <App />, element
+React.render <App />, document.body

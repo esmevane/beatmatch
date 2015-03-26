@@ -7,16 +7,20 @@ _beatmatchCredentials =
   key:    Credentials.consumerKey
   secret: Credentials.consumerSecret
 
-_credentialString = -> queryString.stringify(_beatmatchCredentials)
+_credentialString = (params) ->
+  creds      = _beatmatchCredentials
+  creds[key] = value for key, value of params
+
+  queryString.stringify(creds)
 
 class RestClient
-  constructor: ({ @url, @resource }) ->
-    @rest = rest.wrap(mime)
-    @path = "#{@url}/#{@resource}?#{_credentialString()}"
+  constructor: ({ @url, @resource, params }) ->
+    @rest    = rest.wrap(mime)
+    @path    = "#{@url}/#{@resource}?#{_credentialString(params)}"
+    @headers = 'Content-Type': 'application/json'
 
-    @headers =
-      'Content-Type': 'application/json',
-      'User-Agent':   'BeatmatchClient/0.1.0'
+    unless process.browser
+      @headers['User-Agent'] = 'BeatmatchClient/0.1.0'
 
   get: -> @rest({ @path, @headers })
 

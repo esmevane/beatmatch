@@ -3,52 +3,68 @@ promise    = require('when')
 RestClient = require('../utilities/rest_client')
 Entity     = require('../entities/user_entity')
 
-# Lots of this file is @wip for the sake of not pummeling the underlying API
-# while I compose my components.
-
 _get = (resource) ->
   url  = 'https://api.discogs.com/users'
   rest = new RestClient({ url, resource })
   rest.get()
 
-_getWantlistIds = (name, done) ->
-  done _.sample [1..100], 50
-  # _get("#{name}/wants").then ({ entity }) ->
-  #   ids = _.pluck entity.wants, 'id'
-  #   done(ids)
+_getWantlist = (name, done) ->
+  _get("#{name}/wants").then ({ entity }) ->
+    ids   = _.pluck entity.wants, 'id'
+    wants = entity.wants
 
-_getCollectionIds = (name, done) ->
-  done _.sample [1..100], 50
-  # _get("#{name}/collection/folders/0/releases").then ({ entity }) ->
-  #   ids = _.pluck entity.wants, 'id'
-  #   done(ids)
+    done({ ids, wants })
+
+_getCollection = (name, done) ->
+  _get("#{name}/collection/folders/0/releases").then ({ entity }) ->
+    ids      = _.pluck entity.releases, 'id'
+    collects = entity.releases
+
+    done({ ids, collects })
+
+_getLocalUser = (name, done) ->
+  url      = ''
+  resource = "users/#{name}"
+  rest     = new RestClient({ url, resource })
+  rest.get().then ({ entity }) ->
+    console.log entity
+    done(entity)
 
 class UserRepo
   constructor: -> @users = {}
-
   index: -> _.values @users
 
-  show: (name) ->
-    return @users[name] if @users[name]?
-    @get name, (user) => @users[name] = user
-
   get: (name, done) ->
-    user       = new Entity({ name })
-    wantlist   = _getWantlistIds   name, (ids) -> user.wantlist = ids
-    collection = _getCollectionIds name, (ids) -> user.collects = ids
+    user     = new Entity({ name })
+    promises = []
 
-    @users[name] ||= user
+    complete = ->
+      @users[name] = user
 
-    done(user)
-    # complete   = -> done(user)
-    #
-    # error = (message) ->
-    #   user.loadError = reason: message
-    #   done(user)
-    #
-    # promise.all([wantlist, collection]).then(complete, error)
+      done(user)
 
-global?.repo = new UserRepo
-global?.users = repo.users
+    error = (message) ->
+      user.loadError = reason: message
+      @users[name]   = user
+
+      done(user)
+
+    if process.browser
+      request = _getLocalUser name, (response) -> user.update(response)
+
+      promises.push(request)
+    else
+      wantlist = _getWantlist name, ({ ids, wants }) ->
+        user.update(wantlist: ids, detail: wants: wants)
+
+      collection = _getCollection name, ({ ids, collects }) ->
+        user.update(collects: ids, detail: collects: collects)
+
+      promises.push wantlist, collection
+
+    promise.all(promises).then(complete, error)
+
+global?.repo    = new UserRepo
+global?.users   = repo.users
 
 module?.exports = repo

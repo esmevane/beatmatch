@@ -9,6 +9,14 @@ $overlay: linear-gradient($overlay-color 0, $overlay-color 100%)
   position: relative
   min-height: $base-font-size * 20
 
+  h2
+    border-bottom: 1px solid transparentize($byline-color, 0.6)
+    cursor: pointer
+    font-weight: lighter
+    line-height: $base-font-size
+    margin: $base-font-size $base-font-size * 2 $base-font-size * 0.2
+    text-align: center
+
   header
     background-color: $base-background-color
     min-height: $base-font-size * 10
@@ -22,22 +30,56 @@ $overlay: linear-gradient($overlay-color 0, $overlay-color 100%)
       background: $overlay, url(/images/other.jpg) no-repeat 50% 50%
       background-size: cover
 
+  .no-error
+    min-height: $base-font-size * 0.1
+    visibility: 0
+
+  .prompt, .error
+    color: $accent-color
+    font-size: $base-font-size * 1.25
+    font-weight: bolder
+    line-height: $base-font-size * 3
+    text-align: center
+    text-shadow: 0px 1px 2px $overlay-color
+    min-height: $base-font-size * 7
+
+  .prompt
+    background: transparentize($byline-color, 0.6)
+
+  .error
+    background: transparentize($action-color, 0.6)
+
   .titles
     +full-flex
     text-align: center
 
     li
-      +flex(1 0 20%)
+      +flex(1 0 30%)
 
       background: $accent-color
       box-shadow: 0 1px 2px transparentize($overlay-color, 0.3)
       color: $overlay-color
+      cursor: pointer
       display: inline-block
-      font-size: $base-font-size * 1.25
-      line-height: $base-font-size * 3 * 1.5
       margin: $base-font-size * 0.75
       padding: $base-font-size * 0.75
       text-align: center
+
+    header
+      background: none
+      border-bottom: 1px solid transparentize($overlay-color, 0.3)
+      font-weight: bolder
+      min-height: $base-font-size * 8
+
+  .thumb
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    box-shadow: 0px 1px 6px $overlay-color
+    height: $base-font-size * 10
+    margin: $base-font-size auto
+    padding: $base-font-size
+    width: $base-font-size * 10
 
   input
     border: none

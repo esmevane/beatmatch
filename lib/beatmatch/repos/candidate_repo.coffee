@@ -7,4 +7,5 @@ class CandidateRepo
   set: ({ user, candidate }) -> @candidates[candidate] = user
   get: ({ candidate }) -> @candidates[candidate] || new UserEntity({})
 
-module?.exports = new CandidateRepo
+global?.candidates = new CandidateRepo
+module?.exports    = candidates

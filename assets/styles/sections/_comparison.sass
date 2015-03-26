@@ -1,6 +1,7 @@
 .comparison
   border-radius: $base-font-size * 8
   box-shadow: 0 1px 5px transparentize($overlay-color, 0.1)
+  cursor: pointer
   margin: 0 auto
   max-width: $base-font-size * 8
   max-height: $base-font-size * 8
@@ -14,7 +15,7 @@
   left: 0
   right: 0
 
-  &.no-match
+  &.no-match, &.neutral-match
     background: darken($accent-color, 10%)
 
   &.good-match

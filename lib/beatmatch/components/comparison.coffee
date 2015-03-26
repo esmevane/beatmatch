@@ -28,9 +28,11 @@ class Comparison extends React.Component
     'no-match'
 
   className: -> "comparison #{@warmth()}"
+
   percentage: ->
     result = @compare()
     result = parseInt result * 100
+    result = if result.toString() is "NaN" then 0 else result
     "#{result}%"
 
   render: ->
