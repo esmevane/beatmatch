@@ -1,7 +1,15 @@
 rest            = require('rest')
 mime            = require('rest/interceptor/mime')
 queryString     = require('querystring')
-{ Credentials } = require('../../../config/credentials')
+
+
+{ Credentials } = try
+  require('../../../config/credentials')
+catch error
+  environmentConfig =
+    Credentials:
+      consumerKey:    process.env.DISCOGS_KEY
+      consumerSecret: process.env.DISCOGS_SECRET
 
 _beatmatchCredentials =
   key:    Credentials.consumerKey

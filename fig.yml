@@ -4,4 +4,6 @@ web:
   ports:
     - "9001:9001"
   environment:
+    DISCOGS_KEY: 12345
+    DISCOGS_SECRET: 67890
     NODE_ENV: development
